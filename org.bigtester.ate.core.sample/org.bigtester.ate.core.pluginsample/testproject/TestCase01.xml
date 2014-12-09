@@ -115,7 +115,7 @@
 	
 	<bean id="elementFind2" name="elementFind2" parent="_elementFindAbstract"
 		class="org.bigtester.ate.core.plugin.elementfind.ElementFindByJS">
-		<property name="findByValue" value="modlgn_username1" />
+		<property name="findByValue" value="modlgn_username" />
 	</bean>
 
 	<bean id="elementAction2" name="elementAction2" parent="_elementActionAbstract"
