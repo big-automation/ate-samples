@@ -17,7 +17,7 @@
 		<dependency>
 			<groupId>org.bigtester</groupId>
 			<artifactId>org.bigtester.ate.core</artifactId>
-			<version>0.0.2-SNAPSHOT</version>
+			<version>0.0.5-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -36,7 +36,7 @@
 						<configuration>
 							<mainClass>org.bigtester.ate.TestProjectRunner</mainClass>
 							<arguments>
-								<argument>testproject/testproject.xml</argument>
+								<argument>bigtesterTest/testproject.xml</argument>
 							</arguments>
 						</configuration>
 					</execution>
