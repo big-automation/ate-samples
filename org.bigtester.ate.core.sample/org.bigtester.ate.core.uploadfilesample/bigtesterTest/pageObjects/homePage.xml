@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:ate="http://www.bigtester.org/schema/ate" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	                       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+	                       http://www.springframework.org/schema/aop 
+	                       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+	                       http://www.bigtester.org/schema/ate 
+	                       http://www.bigtester.org/schema/ate/ate-2.0.xsd">
+	                       
+	<!-- this registers beans annotated with @Aspect -->
+	<aop:aspectj-autoproxy />
+
+	<import resource="classpath:META-INF/logger-reporter.xml" />
+	<import resource="classpath:META-INF/page_base_bean.xml" />
+	<ate:homePage id="poHomePage" homeUrl="http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_fileupload_get" dataFile="bigtesterTest/pageObjects/homePage.data.xml"/>
+	
+    <!-- elementActionDef definition -->
+	<ate:elementActionDef id="stepInputFileName"   elementFind="efFileNameInputbox" elementAction="eaInputFileName" />
+	<ate:elementFindById id="efFileNameInputbox" findByValue="modlgn_username" />
+	<ate:uploadFileAction id="eaInputFileName" fileNameWithAbsolutePath ="bigtesterTest/data.xml" />
+<!-- 	<ate:fileDataHolder id="userNameValue" dataValueID="1"/> -->
+
+<!-- elementActionDef definition -->
+	<ate:elementActionDef id="stepClickUploadButton" elementFind="efUploadButton" elementAction="eaUploadButtonClick" />
+	<ate:elementFindByXpath id="efUploadButton" findByValue="//input[@name='Submit']" />
+	<ate:clickAction id="eaUploadButtonClick" />
+
+	<ate:pageElementExistenceAsserter 
+	 id="homeElementExistenceAsserter" resultPage="poHomePage" stepERValue="homePageVID"/>
+	
+</beans>
