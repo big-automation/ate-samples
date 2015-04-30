@@ -17,16 +17,10 @@
 	<import resource="classpath:META-INF/page_base_bean.xml" />
 	<ate:homePage id="poHomePage" homeUrl="http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_fileupload_get" dataFile="bigtesterTest/pageObjects/homePage.data.xml"/>
 	
-    <!-- elementActionDef definition -->
-	<ate:elementActionDef id="stepInputFileName"   elementFind="efFileNameInputbox" elementAction="eaInputFileName" />
-	<ate:elementFindById id="efFileNameInputbox" findByValue="modlgn_username" />
-	<ate:uploadFileAction id="eaInputFileName" fileNameWithAbsolutePath ="bigtesterTest/data.xml" />
-<!-- 	<ate:fileDataHolder id="userNameValue" dataValueID="1"/> -->
-
-<!-- elementActionDef definition -->
-	<ate:elementActionDef id="stepClickUploadButton" elementFind="efUploadButton" elementAction="eaUploadButtonClick" />
-	<ate:elementFindByXpath id="efUploadButton" findByValue="//input[@name='Submit']" />
-	<ate:clickAction id="eaUploadButtonClick" />
+	<!-- elementActionDef definition -->
+	<ate:elementActionDef id="eadInputFileName" elementFind="efInputFileBox" elementAction="eaInputFileName" />
+	<ate:elementFindById id="efInputFileBox" findByValue="myFile" />
+    <ate:uploadFileAction id="eaInputFileName" fileNameWithAbsolutePath ="c:\data.xml" />
 
 	<ate:pageElementExistenceAsserter 
 	 id="homeElementExistenceAsserter" resultPage="poHomePage" stepERValue="homePageVID"/>

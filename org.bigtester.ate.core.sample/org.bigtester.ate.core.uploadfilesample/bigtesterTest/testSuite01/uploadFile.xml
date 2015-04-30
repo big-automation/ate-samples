@@ -27,28 +27,28 @@
 	<ate:operaDriver    />
 	<ate:htmlUnitDriver />
       -->
-	<ate:firefoxDriver  />
+	<ate:IEDriver       />
 	
 	<!-- here test case id has to be "testcase" -->
 	<ate:testCase id="testcase" testCaseName="Upload file test case">
 	
-		<ate:homeStep id="stepOpenUploadFilePage" stepName="stepOpenUploadFilePage"
-			stepDescription="open W3C upload file page step" targetStep="true" pageObject="poHomePage">
-		</ate:homeStep>
-		
-		<ate:elementStep id="stepInputFileName"
-			stepDescription="type in file name" stepName="stepInputFileName"
-			targetStep="false" elementActionDef="eadTypeLoginUserName" pageObject="poHomePage">
-		</ate:elementStep>
+	<ate:homeStep id="stepOpenUploadFilePage" stepName="stepOpenUploadFilePage"
+		stepDescription="open W3C upload file page step" targetStep="true" pageObject="poHomePage">
+		<property name="expectedResultAsserter">
+			<list>
+				<ref bean="homeElementExistenceAsserter" />
+			</list>
+		</property>
+	</ate:homeStep>
+				
+	<ate:elementStep id="stepInputFileName"
+		stepDescription="type in file name" stepName="stepInputFileName"
+		targetStep="false" elementActionDef="eadInputFileName" pageObject="poHomePage">
+	</ate:elementStep>
 	
-		<ate:elementStep id="stepClickUploadButton"
-			stepDescription="Upload File" stepName="uploadFile"
-			targetStep="false" elementActionDef="UploadFile" pageObject="poHomePage">
-		</ate:elementStep>
-		
-		<ate:lastStep id="stepLaststep" stepName="stepLaststep"
-			stepDescription="last step close browser" targetStep="false" pageObject="poLastPage">
-		</ate:lastStep>
+	<ate:lastStep id="stepLaststep" stepName="stepLaststep"
+		stepDescription="last step close browser" targetStep="false" pageObject="poLastPage">
+	</ate:lastStep>
 
 	</ate:testCase>
 </beans>
